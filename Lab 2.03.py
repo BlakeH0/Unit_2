@@ -56,6 +56,7 @@ Translate this Snap! program into a Python program
 Write program below:
 # Rewritten Snap! Code
 
+
 # Variables
 x = int(input("What is x? "))
 y = int(input("What is y? "))
@@ -67,7 +68,7 @@ if x + y > z and y + z > x and z + x > y:
     print(f"The perimeter of your triangle is {p}")
     if x**2 + y**2 == z**2:
         print("This is a right triangle! ")
-    elif y**2 + z**2 == x**2:
+    if y**2 + z**2 == x**2:
         print("This is a right triangle! ")
     elif z**2 + x**2 == y**2:
         print("This is a right triangle! ")
@@ -78,6 +79,7 @@ if x + y > z and y + z > x and z + x > y:
     else: print("This is a scalene triangle!")
 else: print("This is not a valid triangle!")
 
+
 ---------------------------------------
 Create a game show program
 ---------------------------------------
@@ -86,8 +88,6 @@ User picks a number
 The prize corresponding with that door is printed for the user.
 Write code below the multiline comment
 '''
-
-
 prize1 = "a chocolate bunny!"
 prize2 = "a brand new car of your choice!"
 prize3 = "a free vacation to Stockholm, Sweden!"
@@ -123,3 +123,4 @@ elif prize_choice == '10':
     print(f"You received {prize10}")
 else:
         print("That is not a valid number!")
+
