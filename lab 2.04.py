@@ -211,5 +211,19 @@ elif user_input == 'n':
 else:
     print("That is not a valid answer, please answer with 'y' for yes or 'n' for no!")
 
+max_score = max(score)
+index_of_max_score = score.index(max_score)
+fav_food = food[index_of_max_score]
 
-print(f"Your favorite food is  {food[score.index(max(score))]}")
+# Remove Max Score/Index
+score.remove(score[index_of_max_score])
+food.remove(food[index_of_max_score])
+print(f"Your favorite food is  {fav_food}.")
+
+
+# 2nd Favorite Food
+max_score = max(score)
+index_of_max_score = score.index(max_score)
+fav_food = food[index_of_max_score]
+
+print(f"Your second favorite food is {fav_food}.")
