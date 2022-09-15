@@ -64,91 +64,93 @@ board_spaces = 9
 
 board = [[1, 2, 3,], [4, 5, 6], [7, 8, 9]]
 
-print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}" )
-print('---------')
-print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}")
-print("---------")
-print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}")
+print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}" '\n')
+print('---------''\n')
+print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}"'\n')
+print("---------"'\n')
+print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}"'\n')
 
 
 ### GAME FUNCTIONALITY ###
-while game and board_spaces % 2 == 1:
-    p_x_cell_selected = int(input("Player 1 where would you like to place your move? "))    
-    if p_x_cell_selected == 1:
-        board[0][0] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 2:
-        board[0][1] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 3:
-        board[0][2] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 4:
-        board[1][0] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 5:
-        board[1][1] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 6:
-        board[1][2] = 'X'
-        print(board_display)
-    elif p_x_cell_selected == 7:
-        board[2][0] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 8:
-        board[2][1] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    elif p_x_cell_selected == 9:
-        board[2][2] = 'X'
-        board_spaces -= 1
-        print(board_display)
-    else:
-        print("That is not a valid number!")
+while board_spaces > 0:
+    while game and board_spaces % 2 == 1:
+        p_x_cell_selected = int(input("Player 1 where would you like to place your move? "))
+        if type(board[0][p_x_cell_selected]) ==  int: 
+            if p_x_cell_selected == 1:
+                board[0][0] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 2:
+                board[0][1] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 3:
+                board[0][2] = 'X'
+                board_spaces -= 1
+        elif type(board[1][p_x_cell_selected]) == int:
+            if p_x_cell_selected == 4:
+                board[1][0] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 5:
+                board[1][1] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 6:
+                board[1][2] = 'X'
+                board_spaces -= 1
+        elif type(board[2][p_x_cell_selected]) == int:
+            if p_x_cell_selected == 7:
+                board[2][0] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 8:
+                board[2][1] = 'X'
+                board_spaces -= 1
+            elif p_x_cell_selected == 9:
+                board[2][2] = 'X'
+                board_spaces -= 1
+        else:
+            print("That is not a valid number!")
 
-while game == True and board_spaces % 2 == 0:
-    p_o_cell_selected = int(input("Player 2, where would you like to place your move?"))
-if p_o_cell_selected == 1:
-    board[0][0] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 2:
-    board[0][1] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 3:
-    board[0][2] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 4:
-    board[1][0] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 5:
-    board[1][1] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 6:
-    board[1][2] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 7:
-    board[2][0] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 8:
-    board[2][1] = 'O'
-    board_spaces -= 1
-    print(board_display)
-elif p_o_cell_selected == 9:
-    board[2][2] = 'O'
-    board_spaces -= 1
-    print(board_display)
-else:
-    print("That is not a valid number!")
+    print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}" '\n')
+    print('---------''\n')
+    print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}"'\n')
+    print("---------"'\n')
+    print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}"'\n')
+while board_spaces > 0:
+    while board_spaces > 0 and board_spaces % 2 == 0:
+        p_o_cell_selected = int(input("Player 2, where would you like to place your move?"))
+        if type(board[0][p_o_cell_selected]) ==  int: 
+            if p_o_cell_selected == 1:
+                board[0][0] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 2:
+                board[0][1] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 3:
+                board[0][2] = 'O'
+                board_spaces -= 1
+        elif type(board[1][p_o_cell_selected]) ==  int: 
+            if p_o_cell_selected == 4:
+                board[1][0] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 5:
+                board[1][1] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 6:
+                board[1][2] = 'O'
+                board_spaces -= 1
+        elif type(board[2][p_o_cell_selected]) == int:
+            if p_o_cell_selected == 7:
+                board[2][0] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 8:
+                board[2][1] = 'O'
+                board_spaces -= 1
+            elif p_o_cell_selected == 9:
+                board[2][2] = 'O'
+                board_spaces -= 1
+        else:
+            print("That is not a valid number!")
+
+        print(f"{board[0][0]} | {board[0][1]} | {board[0][2]}" '\n')
+        print('---------''\n')
+        print(f"{board[1][0]} | {board[1][1]} | {board[1][2]}"'\n')
+        print("---------"'\n')
+        print(f"{board[2][0]} | {board[2][1]} | {board[2][2]}"'\n')
